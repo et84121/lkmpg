@@ -25,6 +25,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: mkdir output
+        run: mkdir output
+
       - name: pandoc is converting lkmpg.tex to lkmpg.pdf
         uses: docker://pandoc/latex:2.14.1
         with:
