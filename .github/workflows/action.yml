@@ -28,12 +28,12 @@ jobs:
       - name: pandoc is converting lkmpg.tex to lkmpg.pdf
         uses: docker://pandoc/core:2.14.1
         with:
-          args: "-o lkmpg.pdf .\\lkmpg.tex" 
+          args: "-o lkmpg.pdf lkmpg.tex" 
       
       - name: pandoc is converting lkmpg.tex to index.html
         uses: docker://pandoc/core:2.14.1
         with:
-          args: "-o index.html -s .\\lkmpg.tex" 
+          args: "-o index.html -s lkmpg.tex" 
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
