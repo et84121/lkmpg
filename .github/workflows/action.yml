@@ -39,7 +39,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages # The branch the action should deploy to.
-          folder: ~index.html 
+          folder: ~/index.html 
           git-config-name: ghPageBot
       
       - name: Upload PDF file
