@@ -28,22 +28,22 @@ jobs:
       - name: pandoc is converting lkmpg.tex to lkmpg.pdf
         uses: docker://pandoc/latex:2.14.1
         with:
-          args: "-o lkmpg.pdf lkmpg.tex" 
+          args: "-o ./output/lkmpg.pdf lkmpg.tex" 
       
       - name: pandoc is converting lkmpg.tex to index.html
         uses: docker://pandoc/core:2.14.1
         with:
-          args: "-o index.html -s lkmpg.tex" 
+          args: "-o ./output/index.html -s lkmpg.tex" 
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages # The branch the action should deploy to.
-          folder: ./index.html 
+          folder: output
           git-config-name: ghPageBot
       
       - name: Upload PDF file
         uses: actions/upload-artifact@v2
         with:
           name: lkmpg.pdf
-          path: lkmpg.pdf
+          path: ./output/lkmpg.pdf
