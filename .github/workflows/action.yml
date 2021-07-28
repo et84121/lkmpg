@@ -48,5 +48,5 @@ jobs:
       - name: Upload PDF file
         uses: actions/upload-artifact@v2
         with:
-          name: lkmpg.pdf
-          path: ./output/lkmpg.pdf
+          name: lkmpg
+          path: ./output
